@@ -14,8 +14,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+/**
+ * to summarize the notes into a .md file and the questions into a .sr file
+ */
 public class CreateSummary {
 
+  /**
+   * to summarize the notes into a .md file and the questions into a .sr file
+   *
+   * @param filePath where the notes to be summarized are
+   * @param orderingFlag to order by creation modified or filename
+   * @param outputPath the file where the summary has to be written
+   * @throws IOException IOException
+   */
   public void createSummary(Path filePath, SortFiles.OrderingFlag orderingFlag, Path outputPath)
       throws IOException {
     // to walk the file system and select regular .md files

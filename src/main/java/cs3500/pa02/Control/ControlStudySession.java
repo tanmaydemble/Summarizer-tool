@@ -57,7 +57,7 @@ public class ControlStudySession {
   /**
    * to read the user's chosen option and validate it
    */
-  public void requestOption() {
+  private void requestOption() {
     boolean validInput = false;
     while (!validInput) {
       if (scanner.hasNextInt()) {
@@ -79,24 +79,20 @@ public class ControlStudySession {
    *
    * @return the file as a string
    */
-  public String readInput() {
-    System.out.println("we are in teh read input method");
+  private String readInput() {
     StringBuilder output = new StringBuilder();
 
     if (scanner.hasNextLine()) {
       output.append(scanner.nextLine());
     }
-    System.out.println(output);
     return output.toString();
   }
 
   /**
    * to read the target number of questions that the user wants to practice and validate it
    */
-  public void requestTargetNumQuestions() {
+  private void requestTargetNumQuestions() {
     int questionBankSize = currentState.getListOfQuestions().size();
-    System.out.println("in the request num questions");
-    System.out.println(input);
     boolean validInput = false;
     while (!validInput) {
       if (scanner.hasNextInt()) {
@@ -197,6 +193,12 @@ public class ControlStudySession {
 
   /**
    * to call the right method depending on the user input
+   * 1 - mark hard
+   * 2 - mark easy
+   * 3 - show answer
+   * 4 - next question
+   * 5 - previous question
+   * 6 - quit study session
    *
    * @param userInput an integer representing a choice in the menu of options
    */
