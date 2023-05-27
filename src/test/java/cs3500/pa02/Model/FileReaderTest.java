@@ -34,6 +34,11 @@ class FileReaderTest {
         "# heading 1\n" +
         "## heading 2\n" +
         "[[this is the third line]] not this [[third line part 2]]\n" +
-        "7:50\n", FileReader.readFromFile(file1));
+        "7:50\n" +
+        "\n" +
+        "[[Question1:::\n" +
+        "Answer1]]\n" +
+        "[[Question2:::Answer2]]\n" +
+        "[[Question3:::Answer3]]\n", FileReader.readFromFile(file1));
   }
 }

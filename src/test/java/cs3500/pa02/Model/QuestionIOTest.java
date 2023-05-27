@@ -27,8 +27,18 @@ class QuestionIOTest {
 
     QuestionIO questionIO = new QuestionIO();
     questionIO.buildQuestionString(questions);
-    assertEquals("Question1\nA\nAnswer1\nEASY\nQuestion2\nA\nAnswer2\nHARD\n" +
-        "Question3\nA\nAnswer3\nHARD\n", questionIO.getQuestionString());
+    assertEquals("Question1\n" +
+        ":::\n" +
+        "Answer1\n" +
+        "EASY\n" +
+        "Question2\n" +
+        ":::\n" +
+        "Answer2\n" +
+        "HARD\n" +
+        "Question3\n" +
+        ":::\n" +
+        "Answer3\n" +
+        "HARD\n", questionIO.getQuestionString());
   }
 
   /**
