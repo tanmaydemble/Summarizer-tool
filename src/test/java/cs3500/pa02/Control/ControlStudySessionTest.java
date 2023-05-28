@@ -23,14 +23,14 @@ class ControlStudySessionTest {
     ControlStudySession control = new ControlStudySession(stringReader, stringBuilder);
     control.runStudySession();
     assertTrue(stringBuilder.toString().contains("Welcome user! Happy studying!\n"));
-    assertTrue(stringBuilder.toString().contains("Please provide a .sr file to retrieve the" +
-        " questions from :\n"));
-    assertTrue(stringBuilder.toString().contains("Please enter the number of questions that you" +
-        " would like to practice:\n"));
-    assertTrue(stringBuilder.toString().contains("Choose from the following by typing in the" +
-        " correct number:\n" +
-        "1.Mark Hard\t2.Mark Easy\t3.Show Answer\n" +
-        "4.Next Question\t5.Previous Question\t6.Exit Session"));
+    assertTrue(stringBuilder.toString()
+        .contains("Please provide a .sr file to retrieve the" + " questions from :\n"));
+    assertTrue(stringBuilder.toString()
+        .contains("Please enter the number of questions that you" + " would like to practice:\n"));
+    assertTrue(stringBuilder.toString().contains(
+        "Choose from the following by typing in the" + " correct number:\n" +
+            "1.Mark Hard\t2.Mark Easy\t3.Show Answer\n" +
+            "4.Next Question\t5.Previous Question\t6.Exit Session"));
   }
 
   /**
@@ -67,16 +67,16 @@ class ControlStudySessionTest {
     StringBuilder stringBuilder = new StringBuilder();
     ControlStudySession control = new ControlStudySession(stringReader, stringBuilder);
     control.runStudySession();
-    assertTrue(stringBuilder.toString().contains("Option is not a valid option." +
-        " Please choose again.\n"));
+    assertTrue(stringBuilder.toString()
+        .contains("Option is not a valid option." + " Please choose again.\n"));
 
     input = "testFileOutput/testReadSrFile.sr\n2\n2.5\n6\n";
     stringReader = new StringReader(input);
     stringBuilder = new StringBuilder();
     control = new ControlStudySession(stringReader, stringBuilder);
     control.runStudySession();
-    assertTrue(stringBuilder.toString().contains("Option is not a valid option." +
-        " Please choose again.\n"));
+    assertTrue(stringBuilder.toString()
+        .contains("Option is not a valid option." + " Please choose again.\n"));
   }
 
   /**
@@ -107,8 +107,8 @@ class ControlStudySessionTest {
     ControlStudySession control = new ControlStudySession(stringReader, stringBuilder);
     control.runStudySession();
     //assertEquals("",stringBuilder.toString());
-    assertTrue(stringBuilder.toString().contains("The question already exists in the state that" +
-        " you opted to mark it in.\n"));
+    assertTrue(stringBuilder.toString()
+        .contains("The question already exists in the state that" + " you opted to mark it in.\n"));
   }
 
   /**
@@ -154,8 +154,8 @@ class ControlStudySessionTest {
     StringBuilder stringBuilder = new StringBuilder();
     ControlStudySession control = new ControlStudySession(stringReader, stringBuilder);
     control.runStudySession();
-    assertTrue(stringBuilder.toString().contains("This is the first question, cannot go further" +
-        " back"));
+    assertTrue(stringBuilder.toString()
+        .contains("This is the first question, cannot go further" + " back"));
   }
 
   /**
